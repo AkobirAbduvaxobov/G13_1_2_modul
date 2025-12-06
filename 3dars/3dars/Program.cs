@@ -5,41 +5,221 @@ internal class Program
     static void Main(string[] args)
     {
 
-        Console.Write("1 chis son : ");
-        var num1 = int.Parse(Console.ReadLine());
 
-        Console.Write("2 chis son : ");
-        var num2 = int.Parse(Console.ReadLine());
 
-        var num1Counter = 0;
-        var num2Counter = 0;
 
-        for (var i = 1; i <= num1; i++)
-        {
-            if (num1 % i == 0)
-            {
-                num1Counter++;
-            }
-        }
 
-        for (var i = 1; i <= num2; i++)
-        {
-            if (num2 % i == 0)
-            {
-                num2Counter++;
-            }
-        }
+        //var numberFinally = 0;
 
-        if (num1Counter == 2 && num2Counter == 2)
-        {
-            Console.WriteLine(num1 + num2);
-        }
-        else
-        {
-            Console.WriteLine(num1 * num2);
-        }
+        //var r1 = 0; var r2 = 0; var r3 = 0;
 
-        Main(args);
+        //for (var i = 100; i <= 999; i++)
+        //{
+
+        //    r1 = i / 1 % 10;
+        //    r2 = i / 10 % 10;
+        //    r3 = i / 100 % 10;
+
+        //    numberFinally = r1 + r2 + r3;
+
+        //    if (numberFinally > 20)
+        //    {
+        //        Console.WriteLine($"{i},");
+        //    }
+        //}
+
+
+
+        //var sweetPrice = double.Parse(Console.ReadLine());
+
+        //for(var i = 1.1f; i <= 2.1; i += 0.1f)
+        //{
+        //    Console.WriteLine($"{i} : {sweetPrice * i}");
+        //}
+
+        //var n = 7;
+
+        //for(var i = 0; i < n; i++)
+        //{
+        //    for(var j = 0; j < n; j++)
+        //    {
+        //        if (i <= j)
+        //        {
+        //            Console.Write("* ");
+        //        }
+        //        else
+        //        {
+        //            Console.Write("  ");
+        //        }
+        //    }
+        //    Console.WriteLine();
+        //}
+
+
+        // 1.3.2 : 13
+        //var num = int.Parse(Console.ReadLine());
+
+
+        //while (true) // 12, 9, 27, 18
+        //{
+        //    if(num % 3 == 0)
+        //    {
+        //        num = num / 3;
+        //    }
+        //    else if(num == 1)
+        //    {
+        //        Console.WriteLine("Ha");
+        //        break;
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("Yo'q");
+        //        break;
+        //    }
+        //}
+
+
+
+        //var num = int.Parse(Console.ReadLine());
+
+        //var i = 1;
+
+        //while(i < num) // 12, 9, 27, 18
+        //{
+        //    i *= 3;
+        //}
+
+        //if (i == num)
+        //{
+        //    Console.WriteLine("Ha");
+        //}
+        //else
+        //{
+        //    Console.WriteLine("Yo'q");
+        //}
+
+
+
+
+        //var num = 0;
+        //var counter = 0;
+
+        //for (; true;)
+        //{
+        //    Console.Write("Son kiriting : ");
+        //    num = int.Parse(Console.ReadLine());
+
+        //    if (num == 0)
+        //    {
+        //        break;
+        //    }
+        //    ++counter;
+        //}
+
+        //Console.WriteLine(counter);
+
+        // 1.3.2 : 5
+
+        //var num = 0;
+        //var counter = 0;
+
+        //while(true)
+        //{
+        //    Console.Write("Son kiriting : ");
+        //    num = int.Parse(Console.ReadLine());
+
+        //    if(num == 0)
+        //    {
+        //        break;
+        //    }
+        //    ++counter;
+        //}
+
+        //Console.WriteLine(counter);
+
+
+
+
+
+
+        //// 1.3.1 : 30
+        //var a = 4;
+        //var b = 8;
+
+        //var summ = 0;
+
+        //for (var i = a + 1; i < b; i++)
+        //{
+        //    summ += i;
+        //}
+
+        //Console.WriteLine(summ);
+
+
+
+        // 1.3.1 : 15
+        //for (var i = 100; i <= 999; i++)
+        //{
+        //    var r1 = i / 1 % 10;
+        //    var r2 = i / 10 % 10;
+        //    var r3 = i / 100 % 10;
+
+        //    if ((r1 + r2 + r3) > 20)
+        //    {
+        //        Console.WriteLine(i);
+        //    }
+        //}
+
+
+        // 1.3.1 : 11
+        //var a = 14;
+        //var b = 100;
+
+        //for (var i = a; i <= b; i++)
+        //{
+        //    if (i % 4 == 0 && i % 7 == 0)
+        //    {
+        //        Console.WriteLine(i);
+        //    }
+        //}
+
+
+
+        //Console.Write("1 chis son : ");
+        //var num1 = int.Parse(Console.ReadLine());
+
+        //Console.Write("2 chis son : ");
+        //var num2 = int.Parse(Console.ReadLine());
+
+        //var num1Counter = 0;
+        //var num2Counter = 0;
+
+        //for (var i = 1; i <= num1; i++)
+        //{
+        //    if (num1 % i == 0)
+        //    {
+        //        num1Counter++;
+        //    }
+        //}
+
+        //for (var i = 1; i <= num2; i++)
+        //{
+        //    if (num2 % i == 0)
+        //    {
+        //        num2Counter++;
+        //    }
+        //}
+
+        //if (num1Counter == 2 && num2Counter == 2)
+        //{
+        //    Console.WriteLine(num1 + num2);
+        //}
+        //else
+        //{
+        //    Console.WriteLine(num1 * num2);
+        //}
+
+        //Main(args);
 
 
 
