@@ -27,7 +27,7 @@ internal class Program
         {
             if (char.IsUpper(s[i]))
             {
-                count++
+                count++;
             }
         }
 

@@ -1,0 +1,159 @@
+namespace dars5;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        // DRY : don't repeat yourself
+
+
+
+        // "xboxy" => "yboyz"
+
+        //Console.WriteLine(GetChangedXY("xboxy")); // 1.4.0.2
+
+        // "hello" => "olleh"
+
+        //Console.WriteLine(GetReversed("hello")); // 1.4.0.8
+
+        //Console.WriteLine(IsPolindrome("kiyik")); // 1.4.0.10
+        //Console.WriteLine(IsPolindrome("salom"));
+        //Console.WriteLine(IsPolindrome("aka"));
+
+        //Console.WriteLine(GetCountOfOK("oknok")); // 1.4.0.17
+
+
+        // "salom nma gap g13 qale"
+        // "" bo'sh string
+        // "     " white space
+    }
+
+
+    static string GetTextBetweenFirtsTwoSpaces(string s)
+    {
+        var index1 = s.IndexOf(" ");
+        var index2 = s.IndexOf(" ", index1 + 1);
+
+        if(index1 == index2 || index2 == -1)
+        {
+            return string.Empty;
+        }
+        // "salom nma gap g13 qale"
+        var res = s.Substring(index1 + 1, index2 - index1 - 1);
+        return res;
+    }
+
+    static string RemoveSpaces(string s)
+    {
+        s = s.Replace(" ", "");
+
+        return s;
+    }
+
+    static string GetDiff(string a, string b)
+    {
+        var diff = Math.Abs(a.Length - b.Length);
+
+        if(a.Length > b.Length)
+        {
+            a = a.Remove(0, diff);
+            return a + b;
+        }
+
+        b = b.Remove(0, diff);
+        return a + b;
+    }
+
+    static string GetConCat(string a, string b)
+    {
+        // ok  da => okda
+        // hello  kna => hellokna
+
+        if (a[a.Length - 1] == b[0])
+        {
+            b = b.Remove(0, 1);
+        }
+
+        return a + b;
+    }
+
+    static string GetFirstTwo(string s)
+    {
+        return s.Substring(0, 2);
+        // return s.Remove(3);
+    }
+
+    static int GetCountOfOK(string str)
+    {
+        // "oknok"
+        var counter = 0;
+        for(var i = 0; i < str.Length - 1; i++)
+        {
+            if (str[i] == 'o' && str[i+1] == 'k')
+            {
+                ++counter;
+            }
+        }
+        return counter;
+    }
+
+
+    static bool IsPolindrome(string str)
+    {
+        var res = string.Empty;
+
+        for (var i = str.Length - 1; i >= 0; i--)
+        {
+            res = res + str[i];
+        }
+
+        return str == res;
+    }
+
+    static string GetReversed(string str)
+    {
+        // str = "hello"  res = "olleh"
+        var res = string.Empty;
+
+
+        for (var i = str.Length - 1; i >= 0; i--)
+        {
+            res = res + str[i];
+        }
+
+        //for(var i = 0; i < str.Length; i++)
+        //{
+        //    res = str[i] + res;
+        //}
+
+        return res;
+    }
+
+
+    static string GetChangedXY(string str)
+    {
+        var res = string.Empty;
+        for (var i = 0; i < str.Length; i++)
+        {
+            if (str[i] == 'x')
+            {
+                res += 'y';
+            }
+            else if (str[i] == 'y')
+            {
+                res += 'z';
+            }
+            else
+            {
+                res += str[i];
+            }
+        }
+
+        return res;
+
+
+        //str = str.Replace('y', 'z');
+        //str = str.Replace('x', 'y');
+        //return str;
+    }
+}
