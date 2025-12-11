@@ -1,0 +1,340 @@
+
+
+
+
+
+---------------------  function default value-----------
+
+namespace dars6;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        // function default value
+
+        var s = "foundation";
+        Console.WriteLine(CustomSubstr(s, 1));
+        Console.WriteLine(CustomSubstr(s, 2, 4));
+
+    }
+
+    static string CustomSubstr(string s, int startIndex, int len = 0)
+    {
+        if(len == 0)
+        {
+            len = s.Length;
+        }
+        var res = string.Empty;
+        for (var i = startIndex; i < len; i++)
+        {
+            res += s[i];
+        }
+
+        return res;
+    }
+
+   
+}
+
+
+
+--------- OVERLOADING ----------------
+
+namespace dars6;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        // function overloading
+
+        Console.WriteLine(GetMax(4,8));
+        Console.WriteLine(GetMax(4,8,5));
+        Console.WriteLine(GetMax("32", "54", "77"));
+    }
+
+    static int GetMax(int a, int b)
+    {
+        return Math.Max(a, b);
+    }
+
+    static int GetMax(int a, int b, int c)
+    {
+        return Math.Max(a, Math.Max(b, c));
+    }
+    
+    static string GetMax(string a, string b, string c)
+    {
+        return a;
+    }
+
+
+}
+
+
+
+masala
+
+using Microsoft.VisualBasic.FileIO;
+
+namespace dars6;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        // function default value
+
+        //Console.WriteLine(Add(3f, 4.5f));
+        //Console.WriteLine(Add(3f, 4.5f, 3.5f));
+        //Console.WriteLine(Add("11", "22"));
+
+        //Console.WriteLine(Calculate(4, 5));
+        //Console.WriteLine(Calculate(4, 5, 2));
+
+        //Console.WriteLine(Multiplication(4));
+        //Console.WriteLine(Multiplication(3,6));
+        //Console.WriteLine(Multiplication(1,2,3));
+
+    }
+
+
+    static int Multiplication(int a)
+    {
+        int res = 1;
+        for(int i = 1; i <= a; i++)
+        {
+            res *= i;
+        }
+
+        return res;
+    }
+
+    static int Multiplication(int a, int b)
+    {
+        int res = 1;
+        for(int i = a; i <= b; i++)
+        {
+            res *= i;
+        }
+
+        return res;
+    }
+
+    static int Multiplication(int a, int b, int c)
+    {
+        return a * b * c;   
+    }
+
+
+
+
+
+    static int Calculate(int a, int b)
+    {
+        return a + b;
+    }
+    static int Calculate(int a, int b, int c)
+    {
+        return a * b * c;
+    }
+
+
+
+
+
+
+
+
+
+    static float Add(float a, float b)
+    {
+        return a + b;
+    }
+    static float Add(float a, float b, float c)
+    {
+        return a + b + c;
+    }
+    static string Add(string a, string b)
+    {
+        return a + b;
+    }
+
+
+}
+
+
+
+
+
+
+-------- HOMEWORK -----------
+
+
+namespace dars6;
+
+internal class Program
+{
+    static void DisplayList(List<int> nums)
+    {
+        foreach(var num in nums)
+        {
+            Console.Write($"{num} ");
+        }
+        Console.WriteLine();
+    }
+
+    static List<int> FillListWithConsoleValues(List<int> nums, int len)
+    {
+        for(var i = 0; i < len; i++)
+        {
+            Console.Write($"{i} : ");
+            nums.Add(int.Parse(Console.ReadLine()));
+        }
+
+        return nums;
+    }
+
+    static List<int> FillListWithRandomValues(List<int> nums, int len, int min, int max)
+    {
+        Random rand = new Random(); 
+        for (var i = 0; i < len; i++)
+        {
+            nums.Add(rand.Next(min, max));
+        }
+
+        return nums;
+    }
+
+
+
+
+    static void Main(string[] args)
+    {
+
+
+        Console.Write("Enter len of list : ");
+        var len = int.Parse(Console.ReadLine());
+        List<int> nums = new List<int>();
+        //nums = FillListWithConsoleValues(nums, len);
+        nums = FillListWithRandomValues(nums, len, 10, 50);
+        DisplayList(nums);
+
+        var res = GetBiggerThenLeftN(nums);
+        Console.WriteLine(res);
+
+        //var res = GetTwoElements(nums);
+        //DisplayList(res);
+        //var pN = GetCountOfPossitiveNums(nums); // 1.5.1.17
+        //var nN = GetCountOfNegativeNums(nums);
+        //Console.WriteLine($"Musbatlar : {pN}  Manfiy : {nN}");
+
+
+
+        //nums = GetSwappedFirstAndLast(nums); // 1.5.1.6
+        //var res = CompareOddAndEvenElements(nums); // 1.5.1.9
+        //Console.WriteLine(res);
+        //DisplayList(nums);
+
+
+    }
+
+    static int GetBiggerThenLeftN(List<int> nums)
+    {
+        // 9 1 4 2 8 7 2 6
+        var counter = 0;
+        for(var i = 1; i < nums.Count(); i++)
+        {
+            if (nums[i] > nums[i-1])
+            {
+                ++counter;
+            }
+        }
+
+        return counter;
+    }
+
+    static List<int> GetTwoElements(List<int> nums)
+    {
+        // 9 1 4 2 8 7 2 6
+        var num1 = 0;
+        var num2 = 0;
+        for(var i = 0; i < nums.Count() - 1; i++)
+        {
+            if(num1 + num2 < nums[i] + nums[i+1])
+            {
+                num1 = nums[i];
+                num2 = nums[i + 1];
+            }
+        }
+
+        List<int> resposne = new List<int>() { num1, num2 };
+
+        return resposne;
+    }
+
+
+    static int GetCountOfPossitiveNums(List<int> ints)
+    {
+        var countPossitive = 0;
+        foreach(var num in ints)
+        {
+            if(num > 0)
+            {
+                ++countPossitive;
+            }
+        }
+
+        return countPossitive;
+    }
+
+    static int GetCountOfNegativeNums(List<int> ints)
+    {
+        var countNegative = 0;
+        foreach (var num in ints)
+        {
+            if (num < 0)
+            {
+                ++countNegative;
+            }
+        }
+
+        return countNegative;
+    }
+
+
+
+    static bool CompareOddAndEvenElements(List<int> nums)
+    {
+        // 4 8 6 2 6 8 7
+        var countOdd = 0;
+        var countEven = 0;
+
+        foreach(var num in nums)
+        {
+            if(num % 2 == 0)
+            {
+                ++countEven;
+            }
+            else
+            {
+                ++countOdd;
+            }
+        }
+
+        return countOdd > countEven;
+    }
+
+
+    static List<int> GetSwappedFirstAndLast(List<int> nums)
+    {
+        // 4 5 8 7 2
+        var help = nums[0];
+        nums[0] = nums[nums.Count() - 1];
+        nums[nums.Count() - 1] = help;
+
+        return nums;
+    }
+
+}
