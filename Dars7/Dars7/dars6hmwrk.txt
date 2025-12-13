@@ -1,0 +1,315 @@
+
+   ------------------------- 1.4.2.34 -----------------------
+   using System.Data.SqlTypes;
+
+namespace Dars7;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+
+        Console.WriteLine(Foo("abXYabX"));
+        Console.WriteLine(Foo("yy"));
+        Console.WriteLine(Foo("zzzzz"));
+        Console.WriteLine(Foo("Hello!andHello!"));
+        Console.WriteLine(Foo("xavaXYZjava"));
+        Console.WriteLine(Foo("ababa"));
+    }
+
+    static string Foo(string s)
+    {
+        // "zzzzzzzzzzzz"
+        int count = 1;
+        var s1 = string.Empty;
+        var s2 = string.Empty;
+        var res = string.Empty;
+        for (int i = 0, j = s.Length - 1; i < s.Length / 2; i++, --j)
+        {
+            s1 = s.Substring(0, count);
+            s2 = s.Substring(j, count);
+            ++count;
+            if(s1 == s2)
+            {
+                res = s1;
+            }
+        }
+
+        return res;
+    }
+}
+
+
+
+------------------- string -----------------
+
+using System.Diagnostics.SymbolStore;
+using System.Text;
+
+namespace Dars7;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        string s1 = "salom";
+        string s2 = s1;
+        string s3 = s1;
+
+        Console.WriteLine(s1);
+        Console.WriteLine(s2);
+        Console.WriteLine(s3);
+
+        s2 = "hello";
+        Console.WriteLine(s1);
+        Console.WriteLine(s2);
+        Console.WriteLine(s3);
+
+
+    }
+}
+
+
+
+
+
+
+------------------- StringBuilder ----------------
+
+using System.Diagnostics.SymbolStore;
+using System.Text;
+
+namespace Dars7;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        // string => immutable
+        // StringBuilder => mutable
+        // GetEnumerator
+
+        var sb1 = new StringBuilder("salom");
+        
+
+
+
+
+        var sb2 = sb1;
+
+        Console.WriteLine(sb1);
+        Console.WriteLine(sb2);
+
+        sb2[0] = 'S';
+
+        Console.WriteLine(sb1);
+
+
+
+    }
+}
+
+
+
+------------------- Ref vs Value
+
+namespace Dars7;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        int a = 5;
+        int b = a; // 5
+        int c = b; // 5
+
+        a = 8;
+        Console.WriteLine(a);
+        Console.WriteLine(b);
+        Console.WriteLine(c);
+
+
+        //List<int> ints1 = new List<int>() { 1, 2, 3, 4 };
+
+        //var ints2 = ints1;
+        //var ints3 = ints2;
+        //var ints4 = ints3;
+        //var ints5 = new List<int>() { 1, 2, 3, 4 };
+
+        //ints3[0] = 8;
+
+        //Console.WriteLine(ints1[0]);
+        //Console.WriteLine(ints2[0]);
+        //Console.WriteLine(ints3[0]);
+        //Console.WriteLine(ints4[0]);
+        //Console.WriteLine(ints5[0]);
+
+    }
+}
+
+
+
+
+
+
+HOMEWORK
+
+
+1.6.1.JudaQiyin
+
+namespace Dars7;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine(ToUpper('W'));
+        Console.WriteLine(ToUpper('8'));
+        Console.WriteLine(ToUpper('&'));
+        Console.WriteLine(ToUpper('$'));
+        Console.WriteLine(ToUpper('r'));
+        Console.WriteLine(ToUpper('i'));
+    }
+
+
+    static char ToLower(char ch)
+    {
+        if ('A' <= ch && ch <= 'Z')
+        {
+            ch = (char)(ch + 32);
+        }
+
+        return ch;
+    }
+
+
+    static char ToUpper(char ch)
+    {
+        if('a' <= ch && ch <= 'z')
+        {
+            ch = (char)(ch - 32);
+        }
+
+        return ch;
+    }
+
+    static bool IsUpper(char ch)
+    {
+        return 'A' <= ch && ch <= 'Z';
+    }
+    static bool IsLower(char ch)
+    {
+        return 'a' <= ch && ch <= 'z';
+    }
+    static bool IsDigit(char ch)
+    {
+        return '0' <= ch && ch <= '9';
+    }
+
+    static bool IsLetter(char ch)
+    {
+        return 'A' <= ch && ch <= 'Z' 
+                || 'a' <= ch && ch <= 'z';
+    }
+
+    static int Abs(int n)
+    {
+        return n < 0 ? -1 * n : n;
+    }
+}
+
+
+
+1.6.1.9
+
+namespace Dars7;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine(NKub(5));
+        Console.WriteLine(NKub(1));
+        Console.WriteLine(NKub(2));
+    }
+
+    static int NKub(int n)
+    {   // 5
+        if(n == 1)
+        {
+            return 1;
+        }
+
+        return n * n * n + NKub(n - 1);
+    }
+
+ 
+}
+
+
+
+1.6.1.7
+
+namespace Dars7;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine(NLen(458));
+        Console.WriteLine(NLen(1));
+        Console.WriteLine(NLen(14785));
+        Console.WriteLine(NLen(-96));
+        Console.WriteLine(NLen(-8));
+        Console.WriteLine(NLen(0));
+        // NLen(12345) = 1 + NLen(1234)
+        // NLen(1234) = 1 + NLen(123)
+    }
+
+    static int NLen(int n)
+    {
+        // 12345
+        if(-9 <= n && n <= 9)
+        {
+            return 1;
+        }
+
+        return 1 + NLen(n / 10);
+    }
+}
+
+
+
+
+1.6.1.5
+
+namespace Dars7;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+
+        Console.WriteLine(findMax(4,5,6));
+        Console.WriteLine(findMax(4,5,6,2));
+        Console.WriteLine(findMax(4,5,6,7,8));
+
+    }
+
+    static int findMax(int a, int b, int c)
+    {
+        return Math.Max(a, Math.Max(b, c));
+    }
+
+    static int findMax(int a, int b, int c, int d)
+    {
+        return Math.Max(findMax(a, b, c), d);
+    }
+
+    static int findMax(int a, int b, int c, int d, int e)
+    {
+        return Math.Max(findMax(a, b, c, d), e);
+    }
+
+
+}
