@@ -35,6 +35,4 @@ internal class Program
 
         return res;
     }
-   
-
 }
