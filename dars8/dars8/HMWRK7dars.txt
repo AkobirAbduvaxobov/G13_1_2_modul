@@ -1,0 +1,444 @@
+﻿------------- 
+
+
+----------------- capacity --------------
+
+namespace dars8;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        // capacity
+        List<int> nums = new List<int>();
+        Console.WriteLine(nums.Count());  // 0
+        Console.WriteLine(nums.Capacity); // 0
+
+        nums.Add(1);
+
+        Console.WriteLine(nums.Count());  // 1
+        Console.WriteLine(nums.Capacity); // 4
+        nums.Add(1);
+        Console.WriteLine(nums.Count());  // 2
+        Console.WriteLine(nums.Capacity); // 4
+        nums.Add(23);
+        nums.Add(546);
+        Console.WriteLine(nums.Count());  // 4
+        Console.WriteLine(nums.Capacity); // 4
+        nums.Add(432443);
+        Console.WriteLine(nums.Count());  // 5
+        Console.WriteLine(nums.Capacity); // 8
+        nums.AddRange(new int[] { 1, 2, 3 });
+
+
+
+    }
+}
+
+
+
+
+
+
+
+namespace dars8;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        // capacity
+        List<int> nums = new List<int>(3);
+        Console.WriteLine(nums.Count());
+        Console.WriteLine(nums.Capacity);
+
+        nums.Add(1);
+        nums.Add(1);
+        nums.Add(1);
+
+        Console.WriteLine(nums.Count());
+        Console.WriteLine(nums.Capacity);
+        nums.Add(1);
+        Console.WriteLine(nums.Count());
+        Console.WriteLine(nums.Capacity);
+
+    }
+}
+
+
+
+
+------------------- array vs list ------------
+
+namespace dars8;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        int[] arr = new int[3] { 1, 2, 3 };
+
+        Do(arr);
+
+        Console.WriteLine(arr[0]);
+    }
+
+    static void Do(int[] nums)
+    {
+        nums[0] = 5;
+    }
+}
+
+
+
+
+
+
+
+
+
+--------------------- Yechim ---------------------
+
+
+namespace dars8;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        int son1 = 7;
+
+        Task4(ref son1);
+
+        Console.WriteLine(son1);
+
+    }
+
+    static void Task4(ref int a)
+    {
+        a = a * a;
+    }
+    
+}
+
+
+-----------------------
+
+namespace dars8;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        int son1 = 78;
+        int son2 = 21;
+
+        Task3(ref son1, ref son2);
+
+        Console.WriteLine(son1);
+        Console.WriteLine(son2);
+
+    }
+
+    static void Task3(ref int a, ref int b)
+    {
+        int c = a;
+        a = b;
+        b = c;
+    }
+    
+}
+
+
+
+--------------------------
+
+namespace dars8;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        int son;
+        Task2(out son);
+        Console.WriteLine(son);
+
+    }
+
+    static void Task2(out int son)
+    {
+        Console.Write("Son kiriting: ");
+        son = int.Parse(Console.ReadLine());
+    }
+    
+}
+
+
+----------------
+
+namespace dars8;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        int a = 7;
+        Task1(ref a);
+        Console.WriteLine(a);
+
+    }
+
+    static void Task1(ref int a)
+    {
+        a = 2 * a;
+    }
+    
+}
+
+
+
+
+-------------------- Tasklar ---------------------
+
+1️⃣ Masala (ref)
+
+int a = 5; berilgan.
+Metod yozing, u ref orqali a ning qiymatini 2 baravar oshirsin.
+
+
+
+
+➡️ Natija: a = 10
+
+2️⃣ Masala (out)
+
+Metod yozing, u out orqali foydalanuvchi kiritgan sonni qaytarsin.
+
+➡️ Metod chaqirilgandan keyin son Main da mavjud bo‘lsin.
+
+3️⃣ Masala (ref)
+
+Ikki son berilgan: a = 3, b = 7.
+ref yordamida ularning qiymatlarini almashtiring.
+
+➡️ Natija: a = 7, b = 3
+
+4️⃣ Masala (out)
+
+Metod yozing, u out orqali sonning kvadratini qaytarsin.
+
+➡️ Masalan: 5 → 25
+
+5️⃣ Masala (ref)
+
+int x = 10;
+Agar x juft bo‘lsa, ref orqali x ni 0 ga tenglashtiring.
+
+🟡 O‘RTACHA MASALALAR (5 ta)
+6️⃣ Masala (ref)
+
+Berilgan sonni ref orqali:
+
+agar manfiy bo‘lsa → musbatga aylantiring
+
+aks holda o‘zgartirmang
+
+7️⃣ Masala (out)
+
+Metod yozing, u out orqali:
+
+sonning yig‘indisini
+
+sonning ko‘paytmasini
+
+qaytarsin (a va b berilgan).
+
+8️⃣ Masala (ref)
+
+int balance = 1000;
+Metod yozing:
+
+agar yechmoqchi bo‘lgan summa balansdan katta bo‘lmasa, balansdan ayirsin
+
+aks holda balans o‘zgarmasin
+
+➡️ ref ishlating
+
+9️⃣ Masala (out)
+
+Berilgan son uchun:
+
+agar juft bo‘lsa → true
+
+toq bo‘lsa → false
+
+natijani out orqali qaytaring.
+
+🔟 Masala (ref)
+
+int a = 1;
+Metod yozing, u ref orqali a ni 1 dan 10 gacha oshirib chiqsin (loop ichida).
+
+
+
+
+
+
+
+
+
+------------- Task ref out -----------------------
+
+namespace dars8;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        // ref vs out
+        // ref =>  Funksiya ketadigan ref ostidagi
+        // o'zgarubchini qiymati bo'lishi shart
+
+        // out => Funksiya ketadigan out ostidagi
+        // o'zgarubchini qiymati funksiyani ichida o'zgarishi shart
+
+        //int s;
+        //int p;
+        //int a = 5;
+        //Do1(a, out s, out p);
+        //Console.WriteLine(s);
+        //Console.WriteLine(p);
+
+        int a;
+        int.TryParse(Console.ReadLine(), out a);
+        //MyTryParse(Console.ReadLine(), out a);
+        //int num = int.Parse(Console.ReadLine());
+
+        Console.WriteLine(a);
+    }
+
+    static bool MyTryParse(string s, out int a)
+    {
+        a = 0;
+        if(!s.All(c => char.IsDigit(c)))
+        {
+            return false;
+        }
+
+        a = int.Parse(s);
+        return true;
+    }
+
+    static void Do1(int a, out int s, out int p)
+    {
+        p = 4 * a;
+        s = a * a;
+    }
+}
+
+
+
+
+----------- Casting (Implicit, Explicit) -----------
+
+namespace dars8;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        //32767
+        //-32768
+
+        // [-32768 : 32767]
+
+        //Console.WriteLine(short.MaxValue);
+        //Console.WriteLine(short.MinValue);
+
+        //int num = -32769;
+        //short num1 = (short)num;
+
+        //Console.WriteLine(num1);
+
+
+        // Casting 
+        // * Implicit Casting (automatically) 
+        // * Explicit Casting (manually)
+
+        //int num1 = 12345;
+        //long num2 = num1; // Implicit Casting
+
+        //long num3 = 44444444444;
+        //int num4 = (int)num3;
+
+        //Console.WriteLine(num4);
+    }
+
+}
+
+
+
+
+
+
+-------------- HMWRK --------------------
+
+
+1.4.1.16
+
+namespace dars8;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine(SeeColor("redLine"));
+        Console.WriteLine(SeeColor("blackHole"));
+        Console.WriteLine(SeeColor("blueSky"));
+        Console.WriteLine(SeeColor("yellowCar"));
+        Console.WriteLine(SeeColor("foundation"));
+
+
+    }
+
+    static string SeeColor(string s)
+    {
+        if(s.StartsWith("red"))
+        {
+            return "red";   
+        }
+
+        if(s.StartsWith("blue"))
+        {
+            return "blue";   
+        }
+
+        return string.Empty;
+    }
+}
+
+
+
+1.4.1.3
+
+namespace dars8;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine(MakeOutWord("<<>>", "Yay"));
+        Console.WriteLine(MakeOutWord("<<>>", "WooHoo"));
+        Console.WriteLine(MakeOutWord("[[]]", "word"));
+
+
+    }
+
+    static string MakeOutWord(string s1, string s2)
+    {
+        // "<<ok>>" "ok"
+        s1 = s1.Insert(2, s2);
+        return s1;
+    }
+
+}
