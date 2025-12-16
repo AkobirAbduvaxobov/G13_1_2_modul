@@ -1,0 +1,128 @@
+-----------------------
+
+namespace dars9;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        // ref out
+        int a;
+        Do(out a);
+        Console.WriteLine(a);
+
+    }
+
+    static void Do(out int a)
+    {
+        a = 10;
+    }
+}
+
+
+
+
+----------------------
+
+
+using System.Text;
+
+namespace dars9;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        
+        List<int> list1 = new List<int>();
+        List<int> list2;
+
+        list1.Add(5); // correct
+        list2.Add(6); // error
+
+
+        list2 = list2 ?? new List<int>();
+
+        int? a = null; // correct
+        int b = null // error
+
+    }
+
+  
+
+}
+
+
+
+
+
+
+
+
+---------------------------------
+namespace dars9;
+
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        
+        List<int> list1 = new List<int>();
+        List<int> list2;
+
+        list1.Add(5);
+        list2.Add(6);
+
+
+
+    }
+
+  
+
+}
+
+
+
+
+
+
+-------------------
+
+namespace dars9;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        string s = "";
+        var res = string.IsNullOrEmpty(s);
+        Console.WriteLine(res);
+    }
+}
+
+
+
+
+---------- String Interpolution ------------
+
+namespace dars9;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        // Console.WriteLine("Hello, {0}! Today is {1}, it's {2:HH:mm} now.", name, date.DayOfWeek, date);
+        var num = 10;
+        var num2 = 50;
+
+        string s = $"son : {num}";
+
+        string s1 = String.Format("sonlar : {0}, {1}", num, num2);
+
+        Console.WriteLine(s);
+        Console.WriteLine(s1);
+
+
+    }
+}
