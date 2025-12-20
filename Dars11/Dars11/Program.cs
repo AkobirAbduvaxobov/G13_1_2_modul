@@ -32,7 +32,7 @@ internal class Program
         AddQuestion(question2);
 
         DisplayQuestions();
-        Console.WriteLine("1 step");
+        Console.WriteLine("1 step");    
 
         var newQuestion = new Question()
         {
