@@ -1,0 +1,42 @@
+namespace _2._1dars;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+
+
+    }
+
+    static int Task6(List<int> ints)
+    {
+        return ints[0] + ints[1];
+    }
+
+    static bool Task2(List<string> texts)
+    {
+        // salomDev Hellodev hairDev PrivetDev
+        foreach (var text in texts)
+        {
+            if (text.Length < 5)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    static int Task1(List<int> nums)
+    {
+        var counter = 0;
+        foreach (var num in nums)
+        {
+            if (num % 2 == 0)
+            {
+                counter++;
+            }
+        }
+
+        return counter;
+    }
+}
