@@ -1,88 +1,40 @@
-﻿namespace _2._2_dars;
+﻿using _2._2_dars.Models;
+using _2._2_dars.Services;
+
+namespace _2._2_dars;
 
 internal class Program
 {
-    static List<Book> Books = new List<Book>();
     static void Main(string[] args)
     {
-        DataSeed();
-
-        var books = GetExpensiveBooksThenMinPrice(5);
-
-
-
-        //var book = GetMaxPricedBook();
-        //Console.WriteLine(book.Price);
-
-    }
-
-    static List<Book> GetExpensiveBooksThenMinPrice(decimal minPrice)
-    {
-        var expensiveBooks = new List<Book>();
-
-        foreach(var book in Books)
+        Phone phone1 = new Phone()
         {
-            if(book.Price > minPrice)
-            {
-                expensiveBooks.Add(book);
-            }
-        }
-
-        return expensiveBooks;
-    }
-
-    static Book GetMaxPricedBook()
-    {
-        Book book = Books[0];
-
-        foreach(var b in Books)
+            Color = "Black",
+            Price = 455
+        };
+        Phone phone2 = new Phone()
         {
-            if(book.Price < b.Price)
-            {
-                book = b;
-            }
-        }
+            Color = "Yellow",
+            Price = 705
+        };
 
-        return book;
-    }
-
-
-    static void DataSeed()
-    {
-        Books.Add(new Book()
+        Phone phone3 = new Phone()
         {
-            BookId = Guid.NewGuid(),
-            Title = "The Great Gatsby",
-            Author = "F. Scott Fitzgerald",
-            Price = 10.99m,
-            Description = "A novel set in the Jazz Age that tells the story of Jay Gatsby's unrequited love for Daisy Buchanan.",
-            Created = DateTime.Now,
-            Genre = "Classic",
-            PageCount = 180
-        });
+            Color = "Red",
+            Price = 300
+        };
 
-        Books.Add(new Book()
-        {
-            BookId = Guid.NewGuid(),
-            Title = "Sariq Devni Minib",
-            Author = "Xudoyberdi To'xtaboyev",
-            Price = 5.99m,
-            Description = "Legenda",
-            Created = DateTime.Now,
-            Genre = "Fantasy",
-            PageCount = 270
-        });
+        PhoneService phoneService = new PhoneService();
 
-        Books.Add(new Book()
-        {
-            BookId = Guid.NewGuid(),
-            Title = "Harry Poter",
-            Author = "Opa",
-            Price = 15.99m,
-            Description = "Legenda 2",
-            Created = DateTime.Now,
-            Genre = "Fantasy",
-            PageCount = 870
-        });
+        var phone1Id = phoneService.AddPhone(phone1);
+        var phone2Id = phoneService.AddPhone(phone2);
+        var phone3Id = phoneService.AddPhone(phone3);
+
+        phoneService.DeletePhone(phone2Id);
+
+        var phones = phoneService.GetPhones();
+        
+
+
     }
 }

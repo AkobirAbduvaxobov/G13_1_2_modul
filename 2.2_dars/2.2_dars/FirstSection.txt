@@ -1,0 +1,162 @@
+
+using _2._2_dars.Models;
+using _2._2_dars.Services;
+
+namespace _2._2_dars;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        //BookService bookService = new BookService();
+
+        //Book book1 = new Book
+        //{
+        //    Title = "The Great Gatsby",
+        //    Author = "F. Scott Fitzgerald",
+        //    Price = 10.99m,
+        //    Description = "A novel set in the Jazz Age.",
+        //    Genre = "Fiction",
+        //    PageCount = 180
+        //};
+
+
+        //var bookId = bookService.AddBook(book1);
+
+        //bookService.DeleteBook(bookId);
+
+    }
+   
+}
+
+
+
+
+-----------------------------------------------------
+
+
+
+namespace _2._2_dars;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+
+
+
+        //DataSeed();
+
+        //var books = GetExpensiveBooksThenMinPrice(5);
+
+
+
+        ////var book = GetMaxPricedBook();
+        ////Console.WriteLine(book.Price);
+
+    }
+
+
+    //static List<Book> GetTwoBooks()
+    //{
+    //    //var firstBook = GetMaxPagedBook();
+    //    //Book book = Books[0];
+
+    //    //foreach (var b in Books)
+    //    //{
+    //    //    if (book.PageCount < b.PageCount && b.PageCount < firstBook.PageCount)
+    //    //    {
+    //    //        book = b;
+    //    //    }
+    //    //}
+
+    //    ////return Books.OrderByDescending(b => b.PageCount).Take(2).ToList();
+
+    //    //return new List<Book> { firstBook, book };
+    //}
+
+    //static Book GetMaxPagedBook()
+    //{
+    //    Book book = Books[0];
+
+    //    foreach (var b in Books)
+    //    {
+    //        if (book.PageCount < b.PageCount)
+    //        {
+    //            book = b;
+    //        }
+    //    }
+
+    //    return book;
+    //}
+
+    //static List<Book> GetExpensiveBooksThenMinPrice(decimal minPrice)
+    //{
+    //    var expensiveBooks = new List<Book>();
+
+    //    foreach(var book in Books)
+    //    {
+    //        if(book.Price > minPrice)
+    //        {
+    //            expensiveBooks.Add(book);
+    //        }
+    //    }
+
+    //    return expensiveBooks;
+    //}
+
+    //static Book GetMaxPricedBook()
+    //{
+    //    Book book = Books[0];
+
+    //    foreach(var b in Books)
+    //    {
+    //        if(book.Price < b.Price)
+    //        {
+    //            book = b;
+    //        }
+    //    }
+
+    //    return book;
+    //}
+
+
+    //static void DataSeed()
+    //{
+    //    Books.Add(new Book()
+    //    {
+    //        BookId = Guid.NewGuid(),
+    //        Title = "The Great Gatsby",
+    //        Author = "F. Scott Fitzgerald",
+    //        Price = 10.99m,
+    //        Description = "A novel set in the Jazz Age that tells the story of Jay Gatsby's unrequited love for Daisy Buchanan.",
+    //        Created = DateTime.Now,
+    //        Genre = "Classic",
+    //        PageCount = 180
+    //    });
+
+    //    Books.Add(new Book()
+    //    {
+    //        BookId = Guid.NewGuid(),
+    //        Title = "Sariq Devni Minib",
+    //        Author = "Xudoyberdi To'xtaboyev",
+    //        Price = 5.99m,
+    //        Description = "Legenda",
+    //        Created = DateTime.Now,
+    //        Genre = "Fantasy",
+    //        PageCount = 270
+    //    });
+
+    //    Books.Add(new Book()
+    //    {
+    //        BookId = Guid.NewGuid(),
+    //        Title = "Harry Poter",
+    //        Author = "Opa",
+    //        Price = 15.99m,
+    //        Description = "Legenda 2",
+    //        Created = DateTime.Now,
+    //        Genre = "Fantasy",
+    //        PageCount = 870
+    //    });
+    //}
+}

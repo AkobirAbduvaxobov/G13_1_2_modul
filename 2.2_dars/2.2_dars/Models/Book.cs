@@ -1,4 +1,4 @@
-﻿namespace _2._2_dars;
+﻿namespace _2._2_dars.Models;
 
 public class Book
 {
@@ -11,3 +11,4 @@ public class Book
     public string Genre { get; set; }
     public int PageCount { get; set; }
 }
+
