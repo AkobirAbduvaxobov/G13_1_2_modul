@@ -1,0 +1,190 @@
+
+---------------------------------------
+
+using _2._4_dars.Models;
+using Microsoft.VisualBasic;
+
+namespace _2._4_dars;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        Car car = new Car();
+
+        Car.Name = "QWERTY";
+        Car car1 = new Car()
+        {
+            CarId = Guid.NewGuid(),
+            Color = "Black",
+            Model = "Matiz",
+            Brand = "Chevrolet",
+            Price = 3900
+        };
+
+        Car car2 = new Car()
+        {
+            CarId = Guid.NewGuid(),
+            Color = "White",
+            Model = "Spark",
+            Brand = "Chevrolet",
+            Price = 7900
+        };
+
+        Console.WriteLine(car1);
+        Console.WriteLine(car2);
+
+        Car.Name = "123456789";
+
+        Console.WriteLine(car1);
+        Console.WriteLine(car2);
+
+    }
+}
+
+
+
+
+
+------------------------------ STATIC
+
+using _2._4_dars.Models;
+using Microsoft.VisualBasic;
+
+namespace _2._4_dars;
+
+internal class Program
+{
+     static List<string> strings = new List<string>();
+    static void Main(string[] args)
+    {
+        Random random = new Random();
+        
+       
+
+
+        //strings.Add("re");
+        //Foo1();
+        ////Foo2();
+    }
+
+    static void Foo1()
+    {
+        Console.WriteLine("Foo1 static");
+    }
+    void Foo2()
+    {
+        Foo1();
+        Foo3();
+    }
+
+    void Foo3()
+    {
+        Console.WriteLine("Foo3 non-static");
+    }
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+--------------------------------
+
+using _2._4_dars.Models;
+
+namespace _2._4_dars;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+
+
+
+
+        //Car.Name = "Damas";
+
+        //Car car1 = new Car();
+        //Car car2 = new Car();
+        //Car car3 = new Car();
+
+
+        //MyMath.Add(43, 66);
+
+        //Car car1 = new Car();
+
+        //car1.Foo1();
+
+        //Car.Name = "450";
+
+        //Car.Foo2();
+
+        //Math.Max(43,66);
+
+        //Console.WriteLine();
+
+        //Random random = new Random();
+        //random.Next(43,77);
+
+
+
+        
+
+
+        //Car car1 = new Car();
+        //Car car2 = new Car();
+        //Car car3 = new Car();
+
+        //Car[] cars = new Car[3];
+
+        //cars[0] = car1;
+        //cars[1] = car2;
+        //cars[2] = car3;
+
+    }
+}
+
+
+
+
+namespace _2._4_dars.Models;
+
+public class Car
+{
+    public Guid CarId { get; set; }
+    public string Color { get; set; }
+    public string Model { get; set; }
+    public string Brand { get; set; }
+    public decimal Price { get; set; }
+    public static string Name { get; set; }
+
+    public void Foo1()
+    {
+        Console.WriteLine("Foo1 non static");
+    }
+
+    static Car()
+    {
+        Console.WriteLine("Static ctor ishladi");
+    }
+
+    public Car()
+    {
+        Console.WriteLine("Non Static ctor ishladi");
+    }
+
+
+    public static void Foo2()
+    {
+        Console.WriteLine("Foo2 static");
+    }
+
+}
