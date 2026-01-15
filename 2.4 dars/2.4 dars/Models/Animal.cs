@@ -9,7 +9,13 @@ public class Animal
 
     public Animal()
     {
-        Console.WriteLine("Animal ctor ishladi");
+        Console.WriteLine("Animal bo'sh ctor ishladi");
+    }
+
+    public Animal(string color)
+    {
+        Color = color;
+        Console.WriteLine("Animal colorli ctor ishladi ");
     }
 
     public void Sound()

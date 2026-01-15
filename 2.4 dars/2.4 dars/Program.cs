@@ -9,9 +9,17 @@ internal class Program
 
 
 
-        DomesticAnimal domesticAnimal = new DomesticAnimal("Rex");
-        Dog dog = new Dog("Bobik");
-        Console.WriteLine(dog.NickName);
+        DomesticAnimal domesticAnimal = new DomesticAnimal("Bobik");
+        Dog dog2 = new Dog();
+        Console.WriteLine(dog2.NickName);
+
+        // Animal bo'sh ctor ishladi
+        // Domestik animal ctor ishladi
+        // Animal colorli ctor ishladi
+        // Domestik bo'sh ctor ishladi 
+        // Dog bo'sh ctor ishladi
+        // string.empty
+
 
 
 

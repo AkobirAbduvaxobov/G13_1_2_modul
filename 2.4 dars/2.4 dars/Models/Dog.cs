@@ -3,9 +3,14 @@
 public class Dog : DomesticAnimal
 {
 
-    public Dog(string nickName) 
+    public Dog(string nickName) : base(nickName)
     {
         NickName = nickName;
         Console.WriteLine("Dog ctor ishladi");
+    }
+
+    public Dog()
+    {
+        Console.WriteLine("Dog bo'sh ctor ishladi");
     }
 }
