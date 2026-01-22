@@ -29,18 +29,15 @@ public class SingerService : ISingerService
         return singer.SingerId;
     }
 
-    public bool DeleteSinger(Guid singerId)
+    public void DeleteSinger(Guid singerId)
     {
         foreach(var singer in Singers)
         {
             if(singer.SingerId == singerId)
             {
                 Singers.Remove(singer);
-                return true;
             }
         }
-
-        return false;
     }
 
     public List<SingerGetDto> GetAllSingers()

@@ -1,0 +1,33 @@
+using _2._8_dars.Models;
+using _2._8_dars.Services;
+
+namespace _2._8_dars
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // Polimorfizm 
+            SocialMedia socialMedia = new SocialMedia()
+            {
+                Name = "Facebook",
+                Description = "This is Facebook social media platform",
+                Ceo = "Mark Zuckerberg"
+            };
+
+            ISocialMediaService socialMediaService = GetSocialMediaService();
+            socialMediaService.Add(socialMedia);
+
+
+
+        }
+
+        public static ISocialMediaService GetSocialMediaService()
+        {
+            //ISocialMediaService socialMediaService = new SMAwsService();
+            ISocialMediaService socialMediaService = new SMAzureService();
+            return socialMediaService;
+        }
+
+    }
+}
