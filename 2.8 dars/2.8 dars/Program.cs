@@ -1,22 +1,29 @@
 ﻿using _2._8_dars.Models;
 using _2._8_dars.Services;
 
-namespace _2._8_dars
+namespace _2._8_dars;
+
+internal class Program
 {
-    internal class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            EmailService emailService = new EmailService();
-            emailService.SendNotification();
-
-            TeamsService teamsService = new TeamsService();
-            teamsService.SendNotification();
-
-
-
-        }
-
+        var notificationService = GetNotification();    
+        notificationService.SendNotification();
 
     }
+
+
+    public static INotificationService GetNotification()
+    {
+        INotificationService emailNotificationService = new EmailService();
+        INotificationService accauntNotificationService = new AccauntNotificationService();
+        INotificationService tgNotificationService = new TgNotificationService();
+        INotificationService teamsNotificationService = new TeamsService();
+
+        return accauntNotificationService;
+    }
+
+
+
+
 }

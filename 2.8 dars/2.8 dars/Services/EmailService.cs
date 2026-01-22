@@ -1,6 +1,6 @@
 ﻿namespace _2._8_dars.Services;
 
-public class EmailService
+public class EmailService : INotificationService
 {
     public void SendNotification()
     {

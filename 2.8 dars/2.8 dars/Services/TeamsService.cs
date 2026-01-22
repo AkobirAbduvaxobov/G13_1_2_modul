@@ -1,6 +1,6 @@
 ﻿namespace _2._8_dars.Services;
 
-public class TeamsService
+public class TeamsService : INotificationService
 {
     public void SendNotification()
     {
