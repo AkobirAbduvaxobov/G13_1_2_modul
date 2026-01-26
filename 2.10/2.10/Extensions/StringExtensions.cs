@@ -2,6 +2,12 @@
 
 public static class StringExtensions
 {
+    public static (char, char, int, string, string) GetInfo(this string s)
+    {
+        return (s[0], s[s.Length - 1], s.Length,
+            s.Substring(0, 3), s.Substring(s.Length - 3));
+    }
+
     public static int GetCountOfCat1(this string text)
     {
         var catCounter = 0; // "catcat salom cat" 

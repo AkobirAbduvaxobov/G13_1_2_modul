@@ -7,13 +7,24 @@ internal class Program
     static void Main(string[] args)
     {
 
+        User user = new User()
+        {
+            UserId = Guid.NewGuid(),
+            FirstName = "Test",
+            BirthOfDate = DateTime.Now.AddYears(-31),
+        };
+
+        Console.WriteLine(user.GetAge()); 
+
+
+
         // touple
 
-        var res = Foo(1,2,3,4);
-        Console.WriteLine(res.max);
-        Console.WriteLine(res.min);
-        Console.WriteLine(res.mult);
-        Console.WriteLine(res.sum);
+        //var res = Foo(1,2,3,4);
+        //Console.WriteLine(res.max);
+        //Console.WriteLine(res.min);
+        //Console.WriteLine(res.mult);
+        //Console.WriteLine(res.sum);
 
 
 
